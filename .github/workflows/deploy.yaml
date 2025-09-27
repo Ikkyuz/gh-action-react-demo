@@ -38,7 +38,6 @@ jobs:
     needs: 
       - build
     # bun run build
-    runs-on: ubuntu-latest
     steps:
       - name: Download dist
         uses: actions/download-artifact@v4
