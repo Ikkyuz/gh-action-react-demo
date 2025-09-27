@@ -1,0 +1,27 @@
+name: lint
+on:
+  push:
+    branches:
+      - main
+      # - feature/**
+      # - "!feature/auth"
+  workflow_dispatch:
+  pull_request:
+    types: 
+      - opened
+
+jobs:
+  lint:
+    # bun run lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v5
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - name: Install dependencies
+        run: bun i
+      - name: Lint
+        run: bun run lint
