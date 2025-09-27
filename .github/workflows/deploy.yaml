@@ -21,6 +21,11 @@ jobs:
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
+      - name: Caching
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/Install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
         run: bun i
       - name: Build
