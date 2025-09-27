@@ -19,6 +19,8 @@ jobs:
         run: bun run lint
 
   deploy:
+    needs: 
+      - lint
     # bun run build
     runs-on: ubuntu-latest
     steps:
