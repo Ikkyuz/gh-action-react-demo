@@ -1,7 +1,11 @@
 name: Deploy React App
 on:
-  push:
+  # push:
   workflow_dispatch:
+  pull_request:
+    types: 
+      - opened
+
 jobs:
   lint:
     # bun run lint
