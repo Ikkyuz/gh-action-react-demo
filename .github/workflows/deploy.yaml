@@ -4,10 +4,11 @@ on:
     branches:
       - main
       - feature/**
-      - "!feature/authen"
+    branches-ignore:
+      - feature/authen
   workflow_dispatch:
   pull_request:
-    types: 
+    types:
       - opened
 
 env:
