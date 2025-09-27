@@ -3,8 +3,8 @@ on:
   push:
     branches:
       - main
-      # - feature/**
-      # - "!feature/auth"
+      - feature/**
+      - "!feature/authen"
   workflow_dispatch:
   pull_request:
     types: 
