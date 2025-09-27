@@ -24,7 +24,8 @@ jobs:
       - name: Caching
         uses: actions/cache@v4
         with:
-          path: ~/.bun/Install/cache
+          path: |
+            ~/.bun/install/cache
           key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
       - name: Install dependencies
         run: bun i
