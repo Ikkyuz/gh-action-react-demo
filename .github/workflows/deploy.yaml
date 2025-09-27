@@ -1,7 +1,7 @@
 name: Deploy React App
 on:
   push:
-  workflows_dispatch:
+  workflow_dispatch:
 jobs:
   lint:
     # bun run lint
