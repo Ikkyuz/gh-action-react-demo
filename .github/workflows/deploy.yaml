@@ -13,22 +13,21 @@ on:
 env:
   BUN_VERSION: latest
 
-
 jobs:
   build:
     environment: test
     runs-on: ubuntu-latest
     steps:
       - name: Print Bun version
-        run: echo "Bun version:${{vars.BUN_VERSION}}"
+        run: echo "Bun version: ${{ vars.BUN_VERSION }}"
       - name: Print API KEY
-        run: echo "API KEY:${{secrets.API_KEY}}"
+        run: echo "API KEY: ${{ secrets.API_KEY }}"
       - name: Clone repository
         uses: actions/checkout@v5
       - name: Setup bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: latest
+          bun-version: ${{ vars.BUN_VERSION }}
       - name: Caching
         uses: actions/cache@v4
         with:
