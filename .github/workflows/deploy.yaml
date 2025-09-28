@@ -62,39 +62,39 @@ jobs:
       #   run: exit 1
 
   notify-failed:
-  runs-on: ubuntu-latest
-  needs:
-    - build
-    - deploy
-  if: failure()
-  steps:
-    - name: Discord notification (failed)
-      env:
-        DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
-      uses: Ilshidur/action-discord@master
-      with:
-        args: |
-          ❌ **Build Failed**
-          🔗 Commit: ${{ github.sha }}
-          🛠 Author: ${{ github.actor }}
-          ⚡ Trigger: ${{ github.event_name }}
-          By: Nat49
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - deploy
+    if: failure()
+    steps:
+      - name: Discord notification (failed)
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            ❌ **Build Failed**
+            🔗 Commit: ${{ github.sha }}
+            🛠 Author: ${{ github.actor }}
+            ⚡ Trigger: ${{ github.event_name }}
+            By: Nat49
 
-notify-success:
-  runs-on: ubuntu-latest
-  needs:
-    - build
-    - deploy
-  if: success()
-  steps:
-    - name: Discord notification (success)
-      env:
-        DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
-      uses: Ilshidur/action-discord@master
-      with:
-        args: |
-          ✅ **Build & Deploy Successful**
-          🔗 Commit: ${{ github.sha }}
-          🛠 Author: ${{ github.actor }}
-          ⚡ Trigger: ${{ github.event_name }}
-          By: Nat49
+  notify-success:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - deploy
+    if: success()
+    steps:
+      - name: Discord notification (success)
+        env:
+          DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
+        uses: Ilshidur/action-discord@master
+        with:
+          args: |
+            ✅ **Build & Deploy Successful**
+            🔗 Commit: ${{ github.sha }}
+            🛠 Author: ${{ github.actor }}
+            ⚡ Trigger: ${{ github.event_name }}
+            By: Nat49
