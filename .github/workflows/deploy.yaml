@@ -73,12 +73,7 @@ jobs:
           DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
         uses: Ilshidur/action-discord@master
         with:
-          args: "
-            ❌ **Build Failed**
-            🔗 Commit: ${{ github.sha }}
-            🛠 Author: ${{ github.actor }}
-            ⚡ Trigger: ${{ github.event_name }}
-            By: Nat49"
+          args: "❌ **Build & Deploy Failed**"
 
   notify-success:
     runs-on: ubuntu-latest
@@ -92,9 +87,4 @@ jobs:
           DISCORD_WEBHOOK: https://discord.com/api/webhooks/xxxxx
         uses: Ilshidur/action-discord@master
         with:
-          args: " 
-            ✅ **Build & Deploy Successful**
-            🔗 Commit: ${{ github.sha }}
-            🛠 Author: ${{ github.actor }}
-            ⚡ Trigger: ${{ github.event_name }}
-            By: Nat49"
+          args: "✅ **Build & Deploy Successful**"
