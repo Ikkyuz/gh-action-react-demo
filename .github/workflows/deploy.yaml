@@ -73,9 +73,9 @@ jobs:
           DISCORD_WEBHOOK: https://discord.com/api/webhooks/1421697869458706533/W2UqZa7gD95EU7ixa4gQN3QLz3pWc3oFepvpv16XWxfpuMMTTiqbNULZWrBBmPfPlYBY
         uses: Ilshidur/action-discord@master
         with:
-          args: "# ❌ Build Commit ${{ github.sha }} | Crafted by Nat49"
+          args: "# 🚨 Build Commit ${{ github.sha }} | Crafted by Nat49"
 
-notify-success:
+  notify-success:
     runs-on: ubuntu-latest
     needs:
       - build
@@ -87,4 +87,4 @@ notify-success:
           DISCORD_WEBHOOK: https://discord.com/api/webhooks/1421697869458706533/W2UqZa7gD95EU7ixa4gQN3QLz3pWc3oFepvpv16XWxfpuMMTTiqbNULZWrBBmPfPlYBY
         uses: Ilshidur/action-discord@master
         with:
-          args: "# ✅ Build Commit ${{ github.sha }} | Crafted by Nat49"
+          args: "# 🚀 Build Commit ${{ github.sha }} | Crafted by Nat49"
