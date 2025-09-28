@@ -15,7 +15,7 @@ env:
 
 jobs:
   build:
-    environment: test
+    environment: test 
     runs-on: ubuntu-latest
     container:
       image: oven/bun:1

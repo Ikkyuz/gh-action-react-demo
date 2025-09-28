@@ -21,4 +21,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ikkyuz/react-demo1 
+          tags: ikkyuz/react-demo1 # ikkyuz/project-name??
