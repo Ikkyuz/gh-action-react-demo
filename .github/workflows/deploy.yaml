@@ -58,6 +58,8 @@ jobs:
           path: dist
       - name: Deploy
         run: echo "Deploying..."
+      - name: Force failed
+        run: exit 1
 
   notify:
     runs-on: ubuntu-latest
