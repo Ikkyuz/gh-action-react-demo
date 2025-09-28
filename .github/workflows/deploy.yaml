@@ -19,7 +19,7 @@ jobs:
         with:
           name: dist-folder
           path: dist/
-
+          
   deploy:
     if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest

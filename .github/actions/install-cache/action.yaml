@@ -20,4 +20,4 @@ runs:
 
     - name: Install deps
       shell: bash
-      run: bun i
+      run: bun i 
